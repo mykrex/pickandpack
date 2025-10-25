@@ -10,6 +10,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Colores personalizados de PickAndPack */
+  --color-navy: #000064;
+  --color-navy-light: #0C06AC;
+  --color-navy-medium: #0D05D2;
+  --color-risd: #3F42FF;
+  --color-gold: #A99667;
+  --color-gold-light: #BCAF88;
+  --color-gold-dark: #9A8458;
 }
 
 @media (prefers-color-scheme: dark) {
