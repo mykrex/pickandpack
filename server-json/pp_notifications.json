@@ -1,0 +1,582 @@
+[
+  {
+    "id": 1,
+    "createdAt": 1761429131229,
+    "state": "new",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "createdAt": 1761432880414,
+    "state": "new",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "createdAt": 1761432909345,
+    "state": "new",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "createdAt": 1761432931064,
+    "state": "new",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    }
+  },
+  {
+    "id": 5,
+    "createdAt": 1761433198588,
+    "state": "resolved",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    },
+    "acknowledgedAt": 1761433277359,
+    "resolvedAt": 1761433278174
+  },
+  {
+    "id": 6,
+    "createdAt": 1761433243004,
+    "state": "resolved",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    },
+    "resolvedAt": 1761433281397
+  },
+  {
+    "id": 7,
+    "createdAt": 1761434162341,
+    "state": "resolved",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "message": "En SNACK_ECO del AA204 (MTY-CUN) en Puesto-3: cambia Galleta María por Galleta Integral 2x.",
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    },
+    "resolvedAt": 1761434189883
+  },
+  {
+    "id": 8,
+    "createdAt": 1761434162391,
+    "state": "new",
+    "type": "ExpirySoon",
+    "severity": "urgent",
+    "route": "MTY-CUN",
+    "station": "Puesto-2",
+    "productCode": "LEC008",
+    "payload": {
+      "message": "Leche en polvo 8g (lote A2025-11) está por caducar. Retira o reemplaza antes de 2/11/2025, 6:00:00 a.m..",
+      "productCode": "LEC008",
+      "productName": "Leche en polvo 8g",
+      "lot": "A2025-11",
+      "cutDate": "2025-11-02T06:00:00",
+      "route": "MTY-CUN",
+      "station": "Puesto-2"
+    }
+  },
+  {
+    "id": 9,
+    "createdAt": 1761434162419,
+    "state": "new",
+    "type": "Substitution",
+    "severity": "high",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "productCode": "DRK023",
+    "payload": {
+      "message": "Sustituir Refresco 355ml por Refresco 330ml — MTY-CUN · vuelos AA204.",
+      "productCode": "DRK023",
+      "productName": "Refresco 355ml",
+      "substituteCode": "DRK045",
+      "substituteName": "Refresco 330ml",
+      "route": "MTY-CUN",
+      "flight": "AA204"
+    }
+  },
+  {
+    "id": 10,
+    "createdAt": 1761434273747,
+    "state": "new",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "message": "En SNACK_ECO del AA204 (MTY-CUN) en Puesto-3: cambia Galleta María por Galleta Integral 2x.",
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    }
+  },
+  {
+    "id": 11,
+    "createdAt": 1761434273767,
+    "state": "new",
+    "type": "ExpirySoon",
+    "severity": "urgent",
+    "route": "MTY-CUN",
+    "station": "Puesto-2",
+    "productCode": "LEC008",
+    "payload": {
+      "message": "Leche en polvo 8g (lote A2025-11) está por caducar. Retira o reemplaza antes de 2/11/2025, 6:00:00 a.m..",
+      "productCode": "LEC008",
+      "productName": "Leche en polvo 8g",
+      "lot": "A2025-11",
+      "cutDate": "2025-11-02T06:00:00",
+      "route": "MTY-CUN",
+      "station": "Puesto-2"
+    }
+  },
+  {
+    "id": 12,
+    "createdAt": 1761434273786,
+    "state": "new",
+    "type": "Substitution",
+    "severity": "high",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "productCode": "DRK023",
+    "payload": {
+      "message": "Sustituir Refresco 355ml por Refresco 330ml — MTY-CUN · vuelos AA204.",
+      "productCode": "DRK023",
+      "productName": "Refresco 355ml",
+      "substituteCode": "DRK045",
+      "substituteName": "Refresco 330ml",
+      "route": "MTY-CUN",
+      "flight": "AA204"
+    }
+  },
+  {
+    "id": 13,
+    "createdAt": 1761434511292,
+    "state": "new",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "message": "En SNACK_ECO del AA204 (MTY-CUN) en Puesto-3: cambia Galleta María por Galleta Integral 2x.",
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    }
+  },
+  {
+    "id": 14,
+    "createdAt": 1761434511326,
+    "state": "resolved",
+    "type": "ExpirySoon",
+    "severity": "urgent",
+    "route": "MTY-CUN",
+    "station": "Puesto-2",
+    "productCode": "LEC008",
+    "payload": {
+      "message": "Leche en polvo 8g (lote A2025-11) está por caducar. Retira o reemplaza antes de 2/11/2025, 6:00:00 a.m..",
+      "productCode": "LEC008",
+      "productName": "Leche en polvo 8g",
+      "lot": "A2025-11",
+      "cutDate": "2025-11-02T06:00:00",
+      "route": "MTY-CUN",
+      "station": "Puesto-2"
+    },
+    "resolvedAt": 1761434528082
+  },
+  {
+    "id": 15,
+    "createdAt": 1761434511363,
+    "state": "new",
+    "type": "Substitution",
+    "severity": "high",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "productCode": "DRK023",
+    "payload": {
+      "message": "Sustituir Refresco 355ml por Refresco 330ml — MTY-CUN · vuelos AA204.",
+      "productCode": "DRK023",
+      "productName": "Refresco 355ml",
+      "substituteCode": "DRK045",
+      "substituteName": "Refresco 330ml",
+      "route": "MTY-CUN",
+      "flight": "AA204"
+    }
+  },
+  {
+    "id": 16,
+    "createdAt": 1761435244861,
+    "state": "resolved",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "message": "En SNACK_ECO del AA204 (MTY-CUN) en Puesto-3: cambia Galleta Mar�a por Galleta Integral 2x.",
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta Mar�a"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    },
+    "resolvedAt": 1761435279968
+  },
+  {
+    "id": 17,
+    "createdAt": 1761435311519,
+    "state": "resolved",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "message": "En SNACK_ECO del AA204 (MTY-CUN) en Puesto-3: cambia Galleta Mar�a por Galleta Integral 2x.",
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta Mar�a"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    },
+    "resolvedAt": 1761435317734
+  },
+  {
+    "id": 18,
+    "createdAt": 1761435325101,
+    "state": "resolved",
+    "type": "ExpirySoon",
+    "severity": "urgent",
+    "route": "MTY-CUN",
+    "station": "Puesto-2",
+    "productCode": "LEC008",
+    "payload": {
+      "message": "Leche en polvo 8g (lote A2025-11) está por caducar. Retira o reemplaza antes de 2/11/2025, 6:00:00 a.m..",
+      "productCode": "LEC008",
+      "productName": "Leche en polvo 8g",
+      "lot": "A2025-11",
+      "cutDate": "2025-11-02T06:00:00",
+      "route": "MTY-CUN",
+      "station": "Puesto-2"
+    },
+    "resolvedAt": 1761435336230
+  },
+  {
+    "id": 19,
+    "createdAt": 1761435764353,
+    "state": "resolved",
+    "type": "PredictionRule",
+    "severity": "info",
+    "route": "MTY-CUN",
+    "payload": {
+      "message": "Carrito SNACK_ECO: Reducir galletas en un 10% para vuelo AA204 — MTY-CUN · turno matutino.",
+      "itemName": "Carrito SNACK_ECO",
+      "recommendation": "Reducir galletas en un 10% para vuelo AA204",
+      "route": "MTY-CUN",
+      "turno": "matutino"
+    },
+    "resolvedAt": 1761435772725
+  },
+  {
+    "id": 20,
+    "createdAt": 1761435781938,
+    "state": "resolved",
+    "type": "ExpirySoon",
+    "severity": "urgent",
+    "route": "MTY-CUN",
+    "station": "Puesto-2",
+    "productCode": "LEC008",
+    "payload": {
+      "message": "Leche en polvo 8g (lote A2025-11) está por caducar. Retira o reemplaza antes de 2/11/2025, 6:00:00 a.m..",
+      "productCode": "LEC008",
+      "productName": "Leche en polvo 8g",
+      "lot": "A2025-11",
+      "cutDate": "2025-11-02T06:00:00",
+      "route": "MTY-CUN",
+      "station": "Puesto-2"
+    },
+    "resolvedAt": 1761435787349
+  },
+  {
+    "id": 21,
+    "createdAt": 1761435792426,
+    "state": "resolved",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "message": "En SNACK_ECO del AA204 (MTY-CUN) en Puesto-3: cambia Galleta Mar�a por Galleta Integral 2x.",
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta Mar�a"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    },
+    "resolvedAt": 1761435797261
+  },
+  {
+    "id": 22,
+    "createdAt": 1761435996132,
+    "state": "resolved",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "message": "En SNACK_ECO del AA204 (MTY-CUN) en Puesto-3: cambia Galleta Mar�a por Galleta Integral 2x.",
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta Mar�a"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    },
+    "resolvedAt": 1761436000836
+  },
+  {
+    "id": 23,
+    "createdAt": 1761436022745,
+    "state": "ack",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "message": "En SNACK_ECO del AA204 (MTY-CUN) en Puesto-3: cambia Galleta Mar�a por Galleta Integral 2x.",
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta Mar�a"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    },
+    "acknowledgedAt": 1761436029636
+  },
+  {
+    "id": 24,
+    "createdAt": 1761436057874,
+    "state": "resolved",
+    "type": "SpecChange",
+    "severity": "high",
+    "drawer": "SNACK_ECO",
+    "route": "MTY-CUN",
+    "flight": "AA204",
+    "station": "Puesto-3",
+    "productCode": "BIS045",
+    "payload": {
+      "message": "En SNACK_ECO del AA204 (MTY-CUN) en Puesto-3: cambia Galleta María por Galleta Integral 2x.",
+      "drawer": "SNACK_ECO",
+      "route": "MTY-CUN",
+      "flight": "AA204",
+      "station": "Puesto-3",
+      "before": {
+        "productCode": "BIS001",
+        "name": "Galleta María"
+      },
+      "after": {
+        "productCode": "BIS045",
+        "name": "Galleta Integral 2x"
+      }
+    },
+    "resolvedAt": 1761436065231
+  }
+]

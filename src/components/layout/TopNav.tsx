@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Timer, Trophy, User } from 'lucide-react'
+import NotificationBell from '@/components/notifications/NotificationBell';
+
 
 export function TopNav() {
   const pathname = usePathname()
@@ -39,6 +41,9 @@ export function TopNav() {
 
           {/* Navigation items */}
           <div className="flex items-center gap-2">
+            {/* 🔔 Aquí va la campanita */}
+            <NotificationBell />
+            
             {navItems.map((item) => {
               const Icon = item.icon
               const isActive = pathname === item.path

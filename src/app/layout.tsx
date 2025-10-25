@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+// 👇 importa el provider
+import { NotificationsProvider } from "@/components/notifications/NotificationsProvider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,11 +26,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* 👇 Ahora todo tu sitio vive dentro del provider */}
+        <NotificationsProvider
+          socketUrl={process.env.NEXT_PUBLIC_NOTIFS_SOCKET ?? "http://localhost:4000"}
+          apiBase={process.env.NEXT_PUBLIC_NOTIFS_API ?? "http://localhost:4000"}
+          station="Puesto-3"
+          routes={["MTY-CUN"]}
+          initialState={undefined}
+        >
+          {children}
+        </NotificationsProvider>
       </body>
     </html>
   );
