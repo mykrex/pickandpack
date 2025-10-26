@@ -52,7 +52,7 @@ export function TopNav() {
             <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
               <span className="text-xl">📦</span>
             </div>
-            <span className="text-xl font-bold text-navy">Pick & Pack</span>
+            <span className="text-xl font-bold text-navy">Turbo Trolly</span>
           </div>
 
           <div className="flex items-center gap-2">

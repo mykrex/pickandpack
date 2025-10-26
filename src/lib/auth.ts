@@ -7,7 +7,7 @@ export async function loginUser(userId: number): Promise<AuthUser | null> {
   try {
     const { data, error } = await supabase
       .from('Users')
-      .select('id, Name')
+      .select('id, Name, correo')
       .eq('id', userId)
       .single()
 
@@ -18,18 +18,12 @@ export async function loginUser(userId: number): Promise<AuthUser | null> {
 
     // Determinar rol basado en el ID
     const role = userId === 11 ? 'admin' : 'operador'
-    
-    // Generar email basado en el nombre
-    const emailMap: { [key: number]: string } = {
-      10: 'isis.malfavon@pickandpack.com',
-      11: 'jose.banda@pickandpack.com',
-    }
 
     const user: AuthUser = {
       id: data.id,
       name: data.Name,
       role: role,
-      email: emailMap[userId] || `${data.Name.toLowerCase().replace(/\s+/g, '.')}@pickandpack.com`
+      email: data.correo || `${data.Name.toLowerCase().replace(/\s+/g, '.')}@gategroup.com`
     }
 
     // Guardar en localStorage

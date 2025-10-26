@@ -51,7 +51,7 @@ export function AdminNav() {
               <span className="text-xl">📦</span>
             </div>
             <div>
-              <span className="text-xl font-bold text-white">Pick & Pack</span>
+              <span className="text-xl font-bold text-white">Turbo Trolly</span>
               <span className="text-xs text-gold-light block leading-none">Admin</span>
             </div>
           </div>

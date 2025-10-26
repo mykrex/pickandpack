@@ -3,38 +3,65 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { LogIn, AlertCircle } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
 import { loginUser } from '@/lib/auth'
 
-// Credenciales mock
-const MOCK_CREDENTIALS = {
-  'isis.malfavon@pickandpack.com': { password: 'isis123', userId: 10 },
-  'jose.banda@pickandpack.com': { password: 'admin123', userId: 11 },
-}
-
-export default function LoginPage() {
+export default function HomePage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const router = useRouter()
+  const supabase = createClient()
 
+  const normalizedEmail = email.trim().toLowerCase()
+  
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     setLoading(true)
 
     try {
-      // Validar credenciales mock
-      const credentials = MOCK_CREDENTIALS[email as keyof typeof MOCK_CREDENTIALS]
+      // Limpiar y normalizar el email
+      const normalizedEmail = email.trim().toLowerCase()
       
-      if (!credentials || credentials.password !== password) {
-        setError('Correo o contraseña incorrectos')
+      console.log('Buscando usuario con email:', normalizedEmail)
+
+      // Buscar usuario por email (normalizado y sin case-sensitive)
+      const { data, error: dbError } = await supabase
+        .from('Users')
+        .select('id, Name, correo, contrasena')
+        .ilike('correo', normalizedEmail) // ← CAMBIO: usar ilike en vez de eq para ignorar mayúsculas/minúsculas
+        .single()
+
+      console.log('Resultado:', data)
+      console.log('Error:', dbError)
+
+      if (dbError) {
+        console.error('Error de Supabase:', dbError)
+        setError('Usuario no encontrado')
         setLoading(false)
         return
       }
 
-      // Login con el userId correspondiente
-      const user = await loginUser(credentials.userId)
+      if (!data) {
+        setError('Usuario no encontrado')
+        setLoading(false)
+        return
+      }
+
+      // Verificar contraseña
+      if (data.contrasena !== password) {
+        console.log('Contraseña incorrecta')
+        setError('Contraseña incorrecta')
+        setLoading(false)
+        return
+      }
+
+      console.log('Login exitoso, cargando usuario...')
+
+      // Cargar usuario en el sistema de auth
+      const user = await loginUser(data.id)
 
       if (!user) {
         setError('Error al cargar usuario')
@@ -42,84 +69,85 @@ export default function LoginPage() {
         return
       }
 
-      // Redirigir segun el rol
+      console.log('Usuario cargado:', user)
+
+      // Redirigir según rol
       if (user.role === 'admin') {
+        console.log('Redirigiendo a /admin')
         router.push('/admin')
       } else {
+        console.log('Redirigiendo a /timer')
         router.push('/timer')
       }
     } catch (err) {
-      setError('Error al iniciar sesión')
+      console.error('Error en login:', err)
+      setError('Error de sistema')
       setLoading(false)
     }
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full border border-gray-200">
+    <main className="min-h-screen bg-gradient-to-br from-navy to-blue-900 flex items-center justify-center p-4">
+      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
         <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-navy rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+          <div className="w-20 h-20 bg-navy rounded-2xl mx-auto mb-6 flex items-center justify-center">
             <span className="text-4xl">📦</span>
           </div>
-          
-          <h1 className="text-4xl font-bold text-navy mb-2">
-            Pick & Pack
-          </h1>
-          
-          <p className="text-gray-600">
-            Sistema de gestión logística
-          </p>
+          <h1 className="text-4xl font-bold text-navy mb-2">Turbo Trolly</h1>
         </div>
 
         {error && (
-          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-700">
-            <AlertCircle className="w-5 h-5" />
-            <span className="text-sm">{error}</span>
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2">
+            <AlertCircle className="w-5 h-5 text-red-600" />
+            <span className="text-sm text-red-700">{error}</span>
           </div>
         )}
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Correo Electrónico
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Correo
             </label>
             <input
               type="email"
-              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none transition-colors"
-              placeholder="correo@pickandpack.com"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none"
+              placeholder="tu@email.com"
               required
-              disabled={loading}
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Contraseña
             </label>
             <input
               type="password"
-              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none transition-colors"
-              placeholder="Ingresa tu contraseña"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none"
+              placeholder="••••••••"
               required
-              disabled={loading}
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-navy hover:bg-navy-light text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-navy text-white font-semibold py-3 rounded-lg hover:bg-navy-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <LogIn className="w-5 h-5" />
+            <LogIn className="w-5 h-5 inline mr-2" />
             {loading ? 'Iniciando...' : 'Iniciar Sesión'}
           </button>
         </form>
+
+        {/* Ayuda para debugging - puedes quitar esto después */}
+        <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+          <p className="text-xs text-blue-800 font-mono">
+            Debug: {normalizedEmail || 'Escribe tu email'}
+          </p>
+        </div>
       </div>
     </main>
   )
