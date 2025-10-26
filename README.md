@@ -1,11 +1,11 @@
-# 🦊 Turbo Trolly - Pick & Pack System
+# 🦊 Turbo Trolley - Pick & Pack System
 
 Sistema de gestión y gamificación para operadores de Pick & Pack en la industria de catering aéreo.
 
 
 ## 🎯 Descripción
 
-**Turbo Trolly** es una plataforma web que permite a los operadores de Gate Group registrar sus tiempos de trabajo, competir en rankings y ganar medallas por sus logros. El sistema incluye un dashboard administrativo para supervisión en tiempo real.
+**Turbo Trolley** es una plataforma web que permite a los operadores de Gate Group registrar sus tiempos de trabajo, competir en rankings y ganar medallas por sus logros. El sistema incluye un dashboard administrativo para supervisión en tiempo real.
 
 
 ## 🚀 Características Principales
