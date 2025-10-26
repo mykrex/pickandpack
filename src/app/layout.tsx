@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+// 👇 importa el provider
+import { NotificationsProvider } from "@/components/notifications/NotificationsProvider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,12 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* 👇 Ahora todo tu sitio vive dentro del provider */}
+        <NotificationsProvider>
+          {children}
+        </NotificationsProvider>
       </body>
     </html>
   );
 }
+
