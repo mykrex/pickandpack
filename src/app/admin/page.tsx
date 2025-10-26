@@ -269,22 +269,20 @@ export default function AdminDashboard() {
                   key={user.user_id}
                   className={`relative p-6 rounded-xl border-2 ${
                     index === 0
-                      ? 'bg-gradient-to-br from-yellow-50 to-yellow-100 border-gold shadow-lg'
+                      ? 'bg-gradient-to-br from-yellow-50 to-amber-100 border-yellow-500 shadow-lg'
                       : index === 1
-                      ? 'bg-gradient-to-br from-gray-50 to-gray-100 border-gray-300'
-                      : 'bg-gradient-to-br from-orange-50 to-orange-100 border-orange-300'
+                      ? 'bg-gradient-to-br from-slate-100 to-gray-200 border-gray-400 shadow-lg'
+                      : 'bg-gradient-to-br from-orange-100 to-orange-200 border-orange-400 shadow-lg'
                   }`}
                 >
-                  {/* Posición */}
                   <div className="text-6xl font-bold text-gray-300 absolute top-4 left-4">
                     #{index + 1}
                   </div>
 
-                  {/* Contenido */}
                   <div className="relative z-10 mt-12">
                     <div className="flex items-center gap-3 mb-3">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl ${
-                        index === 0 ? 'bg-gold' : index === 1 ? 'bg-gray-400' : 'bg-orange-400'
+                        index === 0 ? 'bg-yellow-500' : index === 1 ? 'bg-gray-500' : 'bg-orange-500'
                       }`}>
                         {user.user_name.charAt(0).toUpperCase()}
                       </div>

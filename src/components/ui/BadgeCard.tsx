@@ -93,11 +93,6 @@ export function BadgeCard({
             <span>Score:</span>
             <span className="font-semibold">{metadata.efficiency_score.toFixed(4)}</span>
           </div>
-          <div className="flex items-center justify-between mt-1">
-            <span className="text-[10px]">
-              {metadata.total_carts} carritos / {Math.round(metadata.avg_time)}s
-            </span>
-          </div>
         </div>
       )
     }

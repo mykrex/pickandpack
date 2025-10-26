@@ -146,9 +146,9 @@ export const formatBadgeCategory = (category: BadgeCategory): string => {
 
 export const getBadgeLevelColor = (level: BadgeLevel): string => {
   const colors: Record<BadgeLevel, string> = {
-    bronce: 'bg-orange-100 border-orange-400 text-orange-800',
+    bronce: 'bg-orange-50 border-orange-400 text-orange-800',
     plata: 'bg-gray-100 border-gray-400 text-gray-800',
-    oro: 'bg-yellow-100 border-yellow-500 text-yellow-900',
+    oro: 'bg-amber-50 border-amber-500 text-yellow-900',
     diamante: 'bg-blue-100 border-blue-500 text-blue-900',
     nivel1: 'bg-green-50 border-green-300 text-green-800',
     nivel2: 'bg-green-100 border-green-400 text-green-800',
