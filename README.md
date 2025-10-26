@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🦊 Turbo Trolly - Pick & Pack System
 
-## Getting Started
+Sistema de gestión y gamificación para operadores de Pick & Pack en la industria de catering aéreo.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🎯 Descripción
+
+**Turbo Trolly** es una plataforma web que permite a los operadores de Gate Group registrar sus tiempos de trabajo, competir en rankings y ganar medallas por sus logros. El sistema incluye un dashboard administrativo para supervisión en tiempo real.
+
+---
+
+## 🚀 Características Principales
+
+### Para Operadores
+- ⏱️ **Timer** - Registro de tiempos por carrito (Drawer)
+- 🏆 **Arena** - Ranking competitivo entre operadores
+- 🎖️ **Sistema de Medallas** - Logros globales y personales
+- 📊 **Perfil** - Estadísticas y progreso individual
+
+### Para Administradores
+- 📈 **Dashboard en Tiempo Real** - Monitoreo de métricas del equipo
+- 👥 **Gestión de Usuarios** - Vista completa del equipo
+- 📊 **Analytics** - Gráficas de evolución y rendimiento
+- 🎯 **Top 3** - Mejores tiempos y rankings por región
+
+---
+
+## 🔐 Credenciales de Prueba
+
+### Usuario Operador
+```
+Email: isis@gategroup.com
+Contraseña: isis123
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Usuario Administrador
+```
+Email: jose.d@gategroup.com
+Contraseña: admin123
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎮 Cómo Usar
 
-## Learn More
+### Como Operador
 
-To learn more about Next.js, take a look at the following resources:
+1. **Login** - Ingresa con tus credenciales
+2. **Timer** - Selecciona un drawer (carrito) y registra tu tiempo
+3. **Arena** - Compite con otros operadores y ve el ranking
+4. **Perfil** - Revisa tus estadísticas y medallas ganadas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Como Admin
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Dashboard** - Monitorea métricas globales en tiempo real
+2. **Usuarios** - Ve el rendimiento de todos los operadores
+3. **Analytics** - Analiza tendencias y evolución del equipo
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎖️ Sistema de Medallas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Medallas Globales (Top 4)
+- 🏆 **Tops** - Por estar en el Top 4 de eficiencia
+- ⚡ **Velocidad** - Por mejores tiempos
+- 📦 **Carritos** - Por mayor cantidad procesada
+- 📅 **Antigüedad** - Por tiempo en la empresa
+
+### Medallas Personales (Progreso Individual)
+- ✈️ **Carrito Economy** - Nivel 1-4
+- 💼 **Carrito Business** - Nivel 1-4
+- 📈 **Eficiencia** - Por mejoras continuas
+- 🎯 **Antigüedad Personal** - Años de servicio
+
+---
+
+## 🚀 Hecha un vistaso 
+
+
+
+---
+
+## 📈 Métricas Tracked
+
+- Tiempo promedio por carrito
+- Mejor tiempo personal
+- Total de carritos procesados
+- Score de eficiencia
+- Ranking global y por región
+- Medallas ganadas
+
+---
+
+## 👨‍💻 Desarrollado por
+
+- miembro 1
+- miembro 2
+- miembro 3
+- miembro 4
+
+---
+
+**Made with ❤️ by Turbo Trolley dev team**

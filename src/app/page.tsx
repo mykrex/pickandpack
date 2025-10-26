@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { LogIn, AlertCircle } from 'lucide-react'
+import { LogIn, AlertCircle, X, Key } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { loginUser } from '@/lib/auth'
 import { TurboLogo } from '@/components/ui/TurboLogo'
@@ -12,6 +12,7 @@ export default function HomePage() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [showCredentials, setShowCredentials] = useState(false) // CAMBIADO A FALSE
   const router = useRouter()
   const supabase = createClient()
 
@@ -76,6 +77,13 @@ export default function HomePage() {
     }
   }
 
+  // Función para llenar credenciales
+  const fillCredentials = (userEmail: string, userPassword: string) => {
+    setEmail(userEmail)
+    setPassword(userPassword)
+    setShowCredentials(false)
+  }
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-navy to-blue-900 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Decoración de fondo */}
@@ -84,9 +92,89 @@ export default function HomePage() {
         <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
       </div>
 
+      {/* POPUP FLOTANTE DE CREDENCIALES - Solo aparece cuando showCredentials es true */}
+      {showCredentials && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative animate-in zoom-in slide-in-from-bottom-4">
+            {/* Botón cerrar */}
+            <button
+              onClick={() => setShowCredentials(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Header */}
+            <div className="flex items-center gap-3 mb-4">
+              <div>
+                <h3 className="text-xl font-bold text-gray-900">Credenciales de Prueba</h3>
+                <p className="text-sm text-gray-600">Haz clic para autocompletar</p>
+              </div>
+            </div>
+
+            {/* Credenciales */}
+            <div className="space-y-3">
+              {/* Usuario */}
+              <button
+                onClick={() => fillCredentials('isis@gategroup.com', 'isis123')}
+                className="w-full text-left p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-md transition-all group"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-bold text-blue-900">Usuario</span>
+                  <span className="text-xs text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Click para usar
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm text-gray-700 font-mono bg-white px-2 py-1 rounded">
+                    isis@gategroup.com
+                  </p>
+                  <p className="text-sm text-gray-700 font-mono bg-white px-2 py-1 rounded">
+                    isis123
+                  </p>
+                </div>
+              </button>
+
+              {/* Admin */}
+              <button
+                onClick={() => fillCredentials('jose.d@gategroup.com', 'admin123')}
+                className="w-full text-left p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-md transition-all group"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-bold text-blue-900">Admin</span>
+                  <span className="text-xs text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Click para usar
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm text-gray-700 font-mono bg-white px-2 py-1 rounded">
+                    jose.d@gategroup.com
+                  </p>
+                  <p className="text-sm text-gray-700 font-mono bg-white px-2 py-1 rounded">
+                    admin123
+                  </p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <button
+        onClick={() => setShowCredentials(true)}
+        className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 group"
+        title="Ver credenciales de prueba"
+      >
+        <Key className="w-6 h-6" />
+        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center animate-pulse">
+          ?
+        </span>
+      </button>
+
+      {/* Form */}
       <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full relative z-10">
         <div className="text-center mb-4">
-          {/* Logo de Turbo - Solo carita, con animación */}
+          {/* Logo de Turbo */}
           <div className="mx-auto mb-6 flex justify-center">
             <TurboLogo size={120} animated={true} showBody={false} />
           </div>
@@ -141,7 +229,7 @@ export default function HomePage() {
           </button>
         </form>
 
-        {/* Pequeño Turbo en la esquina - Sin animación */}
+        {/* Pequeño Turbo en la esquina */}
         <div className="absolute -bottom-4 -right-4 opacity-10">
           <TurboLogo size={120} animated={false} showBody={false} />
         </div>
