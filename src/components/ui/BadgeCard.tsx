@@ -159,7 +159,7 @@ export function BadgeCard({
             />
           ) : (
             <div className="w-full h-full bg-gray-200 rounded-full flex items-center justify-center">
-              <span className="text-2xl">🏆</span>
+              <span className="text-2xl"></span> // Icomo de trofeo?
             </div>
           )}
         </div>
@@ -167,7 +167,7 @@ export function BadgeCard({
 
       {/* Badge Info */}
       <div className="text-center">
-        <h4 className={`font-bold mb-1 ${size === 'small' ? 'text-xs' : 'text-sm'}`}>
+        <h4 className={`font-bold mb-2 ${size === 'small' ? 'text-xs' : 'text-sm'}`}>
           {badge.title}
         </h4>
         <p className={`${size === 'small' ? 'text-[10px]' : 'text-xs'} opacity-80`}>
@@ -176,24 +176,6 @@ export function BadgeCard({
         
         {renderMetadata()}
 
-        {/* Fecha de obtención */}
-        {badge.earned && (
-          <p className={`${size === 'small' ? 'text-[9px]' : 'text-[10px]'} mt-2 opacity-60 font-medium`}>
-            {formatDate(badge.earned_at)}
-          </p>
-        )}
-      </div>
-
-      {/* Badge Type Indicator */}
-      {badge.badge_type === 'global' && (
-        <div className="absolute top-2 right-2">
-          <span className="text-lg" title="Medalla Global">🌍</span>
-        </div>
-      )}
-
-      {/* Shine effect */}
-      <div className="absolute top-2 left-2">
-        <span className="text-lg">✨</span>
       </div>
     </div>
   )

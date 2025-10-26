@@ -124,20 +124,16 @@ export function StatsGrid({ userId }: StatsGridProps) {
         <StatCard
           icon={Plane}
           label="Trolleys por Vuelo"
-          value={stats.trolleysPerFlight}
+          value={4}
           variant="secondary"
-          trend="up"
-          trendValue="2"
         />
         
         {/* MOCK: Trolleys esta Semana */}
         <StatCard
           icon={Calendar}
           label="Trolleys esta Semana"
-          value={stats.weeklyTrolleys}
+          value={35}
           variant="accent"
-          trend="up"
-          trendValue="12%"
         />
         
         {/* REAL: Mejor Tiempo */}
@@ -152,7 +148,7 @@ export function StatsGrid({ userId }: StatsGridProps) {
         <StatCard
           icon={Rocket}
           label="Vuelos Completados"
-          value={stats.totalFlights}
+          value={170}
           variant="secondary"
         />
         

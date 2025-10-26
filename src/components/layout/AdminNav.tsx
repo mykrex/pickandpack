@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { LayoutDashboard, Users, User, LogOut } from 'lucide-react'
 import { logout, getCurrentUser } from '@/lib/auth'
+import { TurboLogo } from '@/components/ui/TurboLogo'
 
 export function AdminNav() {
   const pathname = usePathname()
@@ -47,9 +48,7 @@ export function AdminNav() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-              <span className="text-xl">📦</span>
-            </div>
+            <TurboLogo size={40} animated={false} showBody={false} />
             <div>
               <span className="text-xl font-bold text-white">Turbo Trolly</span>
               <span className="text-xs text-gold-light block leading-none">Admin</span>
@@ -105,15 +104,6 @@ export function AdminNav() {
                   </div>
                   
                   <div className="py-2">
-                    <Link
-                      href="/admin"
-                      onClick={() => setIsProfileOpen(false)}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors"
-                    >
-                      <User className="w-5 h-5 text-gray-600" />
-                      <span className="text-sm font-medium text-gray-700">Mi Dashboard</span>
-                    </Link>
-
                     <button
                       onClick={handleLogout}
                       className="w-full flex items-center gap-3 px-4 py-3 hover:bg-red-50 transition-colors text-left"

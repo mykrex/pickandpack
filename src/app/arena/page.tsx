@@ -163,7 +163,7 @@ export default function ArenaPage() {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <Trophy className="w-8 h-8 text-gold" />
-                <h1 className="text-3xl font-bold text-navy">🏆 Arena</h1>
+                <h1 className="text-3xl font-bold text-navy">Arena</h1>
               </div>
               
               <button
@@ -178,7 +178,7 @@ export default function ArenaPage() {
             
             <div className="flex items-center gap-2 text-gray-600">
               <Users className="w-5 h-5" />
-              <p>Ranking de {users.length} operadores (ordenado por medallas y score)</p>
+              <p>Ranking de operadores por medallas y score</p>
             </div>
           </div>
 
@@ -218,7 +218,7 @@ export default function ArenaPage() {
 
                         {/* Avatar */}
                         <div className={`w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl ${
-                          isCurrentUser ? 'bg-blue-600 ring-4 ring-blue-300' : 'bg-navy'
+                          isCurrentUser ? 'bg-blue-600 ring-3 ring-blue-300' : 'bg-navy'
                         }`}>
                           {user.Name?.charAt(0).toUpperCase() || '?'}
                         </div>
@@ -227,11 +227,6 @@ export default function ArenaPage() {
                         <div>
                           <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
                             {user.Name}
-                            {isCurrentUser && (
-                              <span className="text-xs bg-blue-500 text-white px-2 py-1 rounded-full font-semibold">
-                                Tú
-                              </span>
-                            )}
                           </h3>
                           <p className="text-sm text-gray-600">{user.Region}</p>
                           <p className="text-xs text-gray-500">Score: {user.score.toFixed(4)}</p>
@@ -253,7 +248,7 @@ export default function ArenaPage() {
                         <div className="mb-6">
                           <BadgeGrid 
                             badges={globalBadges}
-                            title="🌍 Medallas Globales"
+                            title="Medallas Globales"
                             size="small"
                             columns={4}
                             showMetadata={true}
@@ -264,7 +259,7 @@ export default function ArenaPage() {
                       {personalBadges.length > 0 && (
                         <BadgeGrid 
                           badges={personalBadges}
-                          title="⭐ Medallas Personales"
+                          title="Medallas Personales"
                           size="small"
                           columns={4}
                           showMetadata={true}

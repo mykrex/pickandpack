@@ -137,7 +137,7 @@ export default function PerfilPage() {
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-6">
               <div className="flex items-center gap-3 mb-6">
                 <Globe className="w-6 h-6 text-blue-600" />
-                <h2 className="text-2xl font-bold text-gray-900">🌍 Medallas Globales</h2>
+                <h2 className="text-2xl font-bold text-gray-900">Medallas Globales</h2>
               </div>
               <p className="text-sm text-gray-600 mb-6">
                 Medallas obtenidas por estar en el Top 4 de todos los operadores
@@ -157,7 +157,7 @@ export default function PerfilPage() {
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-6">
               <div className="flex items-center gap-3 mb-6">
                 <Star className="w-6 h-6 text-yellow-500" />
-                <h2 className="text-2xl font-bold text-gray-900">⭐ Medallas Personales</h2>
+                <h2 className="text-2xl font-bold text-gray-900">Medallas Personales</h2>
               </div>
               <p className="text-sm text-gray-600 mb-6">
                 Medallas obtenidas por tus logros individuales
@@ -175,7 +175,6 @@ export default function PerfilPage() {
           {/* Si no tiene ninguna medalla */}
           {badges.length === 0 && !loading && (
             <div className="bg-white rounded-2xl shadow-xl p-12 text-center">
-              <div className="text-6xl mb-4">🏆</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 ¡Comienza tu aventura!
               </h3>

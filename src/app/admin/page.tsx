@@ -234,25 +234,7 @@ export default function AdminDashboard() {
                 Dashboard Administrativo
               </h1>
               <p className="text-gray-600">
-                Monitoreo en tiempo real del rendimiento del equipo
-              </p>
-            </div>
-            <div className="text-right">
-              <div className="flex items-center gap-2 text-sm">
-                {isRealtime ? (
-                  <>
-                    <Activity className="w-4 h-4 text-green-500 animate-pulse" />
-                    <span className="text-green-600 font-semibold">Datos en tiempo real</span>
-                  </>
-                ) : (
-                  <>
-                    <Clock className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-500">Conectando...</span>
-                  </>
-                )}
-              </div>
-              <p className="text-xs text-gray-500 mt-1">
-                {formatLastUpdate()}
+                Monitoreo del rendimiento del equipo
               </p>
             </div>
           </div>
@@ -263,9 +245,9 @@ export default function AdminDashboard() {
               <div>
                 <div className="flex items-center gap-3 mb-2">
                   <Globe className="w-8 h-8" />
-                  <h2 className="text-2xl font-bold">Promedio Global</h2>
+                  <h2 className="text-2xl font-bold">Promedio global</h2>
                 </div>
-                <p className="text-blue-100">Tiempo promedio de todos los registros</p>
+                <p className="text-blue-100">Tiempo promedio de todas las regiones</p>
               </div>
               <div className="text-right">
                 <div className="text-5xl font-bold">{formatTime(Math.round(globalAverage))}</div>
@@ -278,7 +260,7 @@ export default function AdminDashboard() {
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border-2 border-gray-200">
             <div className="flex items-center gap-3 mb-6">
               <Trophy className="w-7 h-7 text-gold" />
-              <h2 className="text-2xl font-bold text-navy">Top 3 Mejores Tiempos</h2>
+              <h2 className="text-2xl font-bold text-navy">Top 3 mejores tiempos registrados</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -293,11 +275,6 @@ export default function AdminDashboard() {
                       : 'bg-gradient-to-br from-orange-50 to-orange-100 border-orange-300'
                   }`}
                 >
-                  {/* Medalla */}
-                  <div className="absolute -top-3 -right-3 w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl shadow-lg border-2 border-gray-200">
-                    {index === 0 ? '🥇' : index === 1 ? '🥈' : '🥉'}
-                  </div>
-
                   {/* Posición */}
                   <div className="text-6xl font-bold text-gray-300 absolute top-4 left-4">
                     #{index + 1}
@@ -330,7 +307,7 @@ export default function AdminDashboard() {
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border-2 border-gray-200">
             <div className="flex items-center gap-3 mb-6">
               <TrendingUp className="w-7 h-7 text-navy" />
-              <h2 className="text-2xl font-bold text-navy">Promedio por Región</h2>
+              <h2 className="text-2xl font-bold text-navy">Promedio por región</h2>
             </div>
 
             <div className="space-y-4">
@@ -363,7 +340,7 @@ export default function AdminDashboard() {
           <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200">
             <div className="flex items-center gap-3 mb-6">
               <Activity className="w-7 h-7 text-navy" />
-              <h2 className="text-2xl font-bold text-navy">Evolución del Tiempo Promedio</h2>
+              <h2 className="text-2xl font-bold text-navy">Evolución del tiempo promedio general</h2>
             </div>
 
             <div className="h-80">

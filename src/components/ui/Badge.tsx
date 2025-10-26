@@ -40,13 +40,6 @@ export function Badge({ icon, title, description, earned, earnedDate }: BadgePro
           </p>
         )}
       </div>
-
-      {/* Shine effect for earned badges */}
-      {earned && (
-        <div className="absolute top-2 right-2">
-          <span className="text-gold text-xl">✨</span>
-        </div>
-      )}
     </div>
   )
 }

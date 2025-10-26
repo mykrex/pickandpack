@@ -33,7 +33,6 @@ export function BadgeGrid({
   if (badges.length === 0) {
     return (
       <div className="text-center py-12">
-        <div className="text-6xl mb-4">🏆</div>
         <p className="text-gray-500">{emptyMessage}</p>
       </div>
     )

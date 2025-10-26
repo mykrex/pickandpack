@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Play, Pause, RotateCcw, Save, CheckCircle } from 'lucide-react'
+import { Play, Pause, RotateCcw, Save, CheckCircle, Timer, Icon } from 'lucide-react'
 import { TopNav } from '@/components/layout/TopNav'
 import { DrawerSelector } from '@/components/ui/DrawerSelector'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -126,7 +126,7 @@ export default function TimerPage() {
           <div className="text-center">
             {/* Icono */}
             <div className="w-16 h-16 bg-navy rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-3xl">⏱️</span>
+              <Timer className="w-8 h-8 text-white" />
             </div>
 
             {/* Título */}

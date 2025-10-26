@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { LogIn, AlertCircle } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { loginUser } from '@/lib/auth'
+import { TurboLogo } from '@/components/ui/TurboLogo'
 
 export default function HomePage() {
   const [email, setEmail] = useState('')
@@ -14,54 +15,48 @@ export default function HomePage() {
   const router = useRouter()
   const supabase = createClient()
 
-  const normalizedEmail = email.trim().toLowerCase()
-  
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     setLoading(true)
 
     try {
-      // Limpiar y normalizar el email
       const normalizedEmail = email.trim().toLowerCase()
       
-      console.log('Buscando usuario con email:', normalizedEmail)
-
-      // Buscar usuario por email (normalizado y sin case-sensitive)
       const { data, error: dbError } = await supabase
         .from('Users')
         .select('id, Name, correo, contrasena')
-        .ilike('correo', normalizedEmail) // ← CAMBIO: usar ilike en vez de eq para ignorar mayúsculas/minúsculas
-        .single()
-
-      console.log('Resultado:', data)
-      console.log('Error:', dbError)
+        .ilike('correo', normalizedEmail)
 
       if (dbError) {
         console.error('Error de Supabase:', dbError)
+        setError('Error al buscar usuario')
+        setLoading(false)
+        return
+      }
+
+      if (!data || data.length === 0) {
         setError('Usuario no encontrado')
         setLoading(false)
         return
       }
 
-      if (!data) {
-        setError('Usuario no encontrado')
-        setLoading(false)
-        return
+      let userFound = null
+      
+      for (const user of data) {
+        if (user.contrasena === password) {
+          userFound = user
+          break
+        }
       }
 
-      // Verificar contraseña
-      if (data.contrasena !== password) {
-        console.log('Contraseña incorrecta')
+      if (!userFound) {
         setError('Contraseña incorrecta')
         setLoading(false)
         return
       }
 
-      console.log('Login exitoso, cargando usuario...')
-
-      // Cargar usuario en el sistema de auth
-      const user = await loginUser(data.id)
+      const user = await loginUser(userFound.id)
 
       if (!user) {
         setError('Error al cargar usuario')
@@ -69,14 +64,9 @@ export default function HomePage() {
         return
       }
 
-      console.log('Usuario cargado:', user)
-
-      // Redirigir según rol
       if (user.role === 'admin') {
-        console.log('Redirigiendo a /admin')
         router.push('/admin')
       } else {
-        console.log('Redirigiendo a /timer')
         router.push('/timer')
       }
     } catch (err) {
@@ -87,17 +77,26 @@ export default function HomePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-navy to-blue-900 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
-        <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-navy rounded-2xl mx-auto mb-6 flex items-center justify-center">
-            <span className="text-4xl">📦</span>
+    <main className="min-h-screen bg-gradient-to-br from-navy to-blue-900 flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Decoración de fondo */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-navy-light rounded-full opacity-20 blur-3xl"></div>
+        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
+      </div>
+
+      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full relative z-10">
+        <div className="text-center mb-4">
+          {/* Logo de Turbo - Solo carita, con animación */}
+          <div className="mx-auto mb-6 flex justify-center">
+            <TurboLogo size={120} animated={true} showBody={false} />
           </div>
+
           <h1 className="text-4xl font-bold text-navy mb-2">Turbo Trolly</h1>
+          <p className="text-gray-600">Bienvenido de vuelta</p>
         </div>
 
         {error && (
-          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2">
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
             <AlertCircle className="w-5 h-5 text-red-600" />
             <span className="text-sm text-red-700">{error}</span>
           </div>
@@ -112,8 +111,8 @@ export default function HomePage() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none"
-              placeholder="tu@email.com"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none transition-colors text-gray-600"
+              placeholder="usuario@email.com"
               required
             />
           </div>
@@ -126,7 +125,7 @@ export default function HomePage() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none transition-colors text-gray-600"
               placeholder="••••••••"
               required
             />
@@ -135,18 +134,16 @@ export default function HomePage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-navy text-white font-semibold py-3 rounded-lg hover:bg-navy-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-navy text-white font-semibold py-3 rounded-lg hover:bg-navy-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            <LogIn className="w-5 h-5 inline mr-2" />
+            <LogIn className="w-5 h-5" />
             {loading ? 'Iniciando...' : 'Iniciar Sesión'}
           </button>
         </form>
 
-        {/* Ayuda para debugging - puedes quitar esto después */}
-        <div className="mt-4 p-3 bg-blue-50 rounded-lg">
-          <p className="text-xs text-blue-800 font-mono">
-            Debug: {normalizedEmail || 'Escribe tu email'}
-          </p>
+        {/* Pequeño Turbo en la esquina - Sin animación */}
+        <div className="absolute -bottom-4 -right-4 opacity-10">
+          <TurboLogo size={120} animated={false} showBody={false} />
         </div>
       </div>
     </main>

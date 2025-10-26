@@ -99,11 +99,6 @@ export function UserCard({ user, badgeCount = 0 }: UserCardProps) {
             <span className="bg-navy text-white px-3 py-1 rounded-full font-medium">
               {user.role || 'Operador'}
             </span>
-            {userRegion && (
-              <span className="text-gray-500 flex items-center gap-1">
-                📍 {userRegion}
-              </span>
-            )}
             <span className="text-gray-500">
               Miembro desde: {formatJoinDate()}
             </span>

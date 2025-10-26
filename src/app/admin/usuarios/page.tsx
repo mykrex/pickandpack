@@ -103,13 +103,13 @@ export default function UsuariosPage() {
       <AdminNav />
       
       <main className="min-h-screen bg-gray-50 p-4 pt-20">
-        <div className="max-w-7xl mx-auto pt-8">
+        <div className="max-w-7xl mx-auto pt-8 mb-2">
           <div className="mb-6">
             <h1 className="text-3xl font-bold text-navy mb-2">
               Gestión de Usuarios
             </h1>
             <p className="text-gray-600">
-              Usuarios ordenados por mejor tiempo promedio
+              Ordenados por mejor tiempo promedio
             </p>
           </div>
 
@@ -145,7 +145,7 @@ export default function UsuariosPage() {
                     <td className="px-6 py-4 font-semibold text-navy">{user.id}</td>
                     
                     {/* Nombre */}
-                    <td className="px-6 py-4 font-medium">{user.Name}</td>
+                    <td className="px-6 py-4 text-gray-600 font-medium">{user.Name}</td>
                     
                     {/* Región */}
                     <td className="px-6 py-4 text-gray-600">{user.Region || 'N/A'}</td>
@@ -178,14 +178,6 @@ export default function UsuariosPage() {
                 ))}
               </tbody>
             </table>
-          </div>
-
-          {/* Leyenda */}
-          <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <p className="text-sm text-blue-800">
-              <strong>📊 Orden:</strong> Los usuarios están ordenados por su tiempo promedio de menor a mayor (más rápido primero). 
-              Los usuarios sin registros aparecen al final.
-            </p>
           </div>
         </div>
       </main>
