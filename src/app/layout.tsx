@@ -31,16 +31,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* 👇 Ahora todo tu sitio vive dentro del provider */}
-        <NotificationsProvider
-          socketUrl={process.env.NEXT_PUBLIC_NOTIFS_SOCKET ?? "http://localhost:4000"}
-          apiBase={process.env.NEXT_PUBLIC_NOTIFS_API ?? "http://localhost:4000"}
-          station="Puesto-3"
-          routes={["MTY-CUN"]}
-          initialState={undefined}
-        >
+        <NotificationsProvider>
           {children}
         </NotificationsProvider>
       </body>
     </html>
   );
 }
+

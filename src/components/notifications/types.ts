@@ -15,3 +15,13 @@ export interface NotificationDTO {
   createdAt: number;
   state: 'new' | 'ack' | 'resolved';
 }
+
+export interface NewsItem {
+  id: number;
+  Title: string;
+  Body: string;
+  Date: string;
+  Ruta?: string | null;
+  Vuelo?: string | null;
+  Estacion?: string | null;
+}
