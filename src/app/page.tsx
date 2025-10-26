@@ -91,7 +91,7 @@ export default function HomePage() {
             <TurboLogo size={120} animated={true} showBody={false} />
           </div>
 
-          <h1 className="text-4xl font-bold text-navy mb-2">Turbo Trolly</h1>
+          <h1 className="text-4xl font-bold text-navy mb-2">Turbo Trolley</h1>
           <p className="text-gray-600">Bienvenido de vuelta</p>
         </div>
 

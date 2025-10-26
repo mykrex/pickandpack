@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Turbo Trolly",
+  title: "Turbo Trolley",
   description: 'Pick & Pack System',
   icons: {
     icon: [

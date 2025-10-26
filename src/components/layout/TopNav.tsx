@@ -50,7 +50,7 @@ export function TopNav() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <TurboLogo size={40} animated={false} showBody={false} />
-            <span className="text-xl font-bold text-navy">Turbo Trolly</span>
+            <span className="text-xl font-bold text-navy">Turbo Trolley</span>
           </div>
 
           <div className="flex items-center gap-2">
