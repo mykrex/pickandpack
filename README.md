@@ -2,9 +2,11 @@
 
 Sistema de gestión y gamificación para operadores de Pick & Pack en la industria de catering aéreo.
 
+
 ## 🎯 Descripción
 
 **Turbo Trolly** es una plataforma web que permite a los operadores de Gate Group registrar sus tiempos de trabajo, competir en rankings y ganar medallas por sus logros. El sistema incluye un dashboard administrativo para supervisión en tiempo real.
+
 
 ## 🚀 Características Principales
 
@@ -20,7 +22,6 @@ Sistema de gestión y gamificación para operadores de Pick & Pack en la industr
 - 📊 **Analytics** - Gráficas de evolución y rendimiento
 - 🎯 **Top 3** - Mejores tiempos y rankings por región
 
----
 
 ## 🔐 Credenciales de Prueba
 
@@ -36,7 +37,6 @@ Email: jose.d@gategroup.com
 Contraseña: admin123
 ```
 
----
 
 ## 🎖️ Sistema de Medallas
 
@@ -46,19 +46,18 @@ Contraseña: admin123
 - 📦 **Carritos** - Por mayor cantidad procesada
 - 📅 **Antigüedad** - Por tiempo en la empresa
 
+
 ### Medallas Personales (Progreso Individual)
 - ✈️ **Carrito Economy** - Nivel 1-4
 - 💼 **Carrito Business** - Nivel 1-4
 - 📈 **Eficiencia** - Por mejoras continuas en su tiempo
 - 🎯 **Antigüedad Personal** - Años de servicio
 
----
 
 ## 🚀 Hecha un vistaso 
 
 [https://pickandpack-beryl.vercel.app](https://pickandpack-beryl.vercel.app)
 
----
 
 ## 📈 Métricas Tracked
 
@@ -69,7 +68,6 @@ Contraseña: admin123
 - Ranking global y por región
 - Medallas ganadas
 
----
 
 ## 👨‍💻 Desarrollado por
 
@@ -78,6 +76,5 @@ Contraseña: admin123
 - Sofia Gonzalez
 - Enrique Aguilar
 
----
 
 **Made with ❤️ by Turbo Trolley dev team**
